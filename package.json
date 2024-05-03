@@ -9,7 +9,8 @@
         "test": "jest",
         "coverage": "jest --coverage",
         "lint": "eslint . --fix --max-warnings=0",
-        "format": "prettier . --write"
+        "format": "prettier . --write",
+        "prepare": "husky install"
     },
     "keywords": [],
     "author": "",
