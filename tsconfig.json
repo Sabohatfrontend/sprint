@@ -8,7 +8,7 @@
     "strict": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
-    "types": ["jest", "@testing-library/jest-dom"]
+    "types": ["jest", "jest-dom", "testing-library__jest-dom"]
   },
   "include": ["src/**/*"]
 }
