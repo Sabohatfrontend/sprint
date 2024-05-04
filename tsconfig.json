@@ -1,14 +1,14 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "allowJs": true,
-        "jsx": "react",
-        "moduleResolution": "node",
-        "outDir": "./dist",
-        "strict": true,
-        "esModuleInterop": true,
-        "noImplicitAny": true,
-        "types": ["jest", "@testing-library/jest-dom"]
-    },
-    "include": ["src/**/*"]
+  "compilerOptions": {
+    "target": "es5",
+    "allowJs": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "types": ["jest", "@testing-library/jest-dom"]
+  },
+  "include": ["src/**/*"]
 }

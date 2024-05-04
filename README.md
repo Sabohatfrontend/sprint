@@ -12,9 +12,9 @@ Launches the test runner in the interactive watch mode using Jest.
 
 ## Running Tests
 
--   To run tests, execute `npm test`.
+- To run tests, execute `npm test`.
 
--   To generate and view test coverage reports, execute `npm run test:coverage`. Coverage reports are saved in the `coverage` directory.
+- To generate and view test coverage reports, execute `npm run test:coverage`. Coverage reports are saved in the `coverage` directory.
 
 ### `npm run build`
 
