@@ -12,9 +12,9 @@ Launches the test runner in the interactive watch mode using Jest.
 
 ## Running Tests
 
--   To run tests, execute `npm test`.
+- To run tests, execute `npm test`.
 
--   To generate and view test coverage reports, execute `npm run test:coverage`. Coverage reports are saved in the `coverage` directory.
+- To generate and view test coverage reports, execute `npm run test:coverage`. Coverage reports are saved in the `coverage` directory.
 
 ### `npm run build`
 
@@ -37,7 +37,3 @@ Runs Prettier on files in the src/ directory. This command will format source fi
 ### `npm run prettier`
 
 Runs Prettier on all files across your entire project, excluding files listed in .prettierignore
-
-### `npm run prepare`
-
-Installs Git hooks using Husky. This is generally used to set up pre-commit or pre-push hooks that run scripts like linting or tests automatically before commits are pushed to ensure code quality.
