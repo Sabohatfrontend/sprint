@@ -6,7 +6,9 @@
         "moduleResolution": "node",
         "outDir": "./dist",
         "strict": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "noImplicitAny": true,
+        "types": ["jest", "@testing-library/jest-dom"]
     },
     "include": ["src/**/*"]
 }

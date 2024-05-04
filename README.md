@@ -37,7 +37,3 @@ Runs Prettier on files in the src/ directory. This command will format source fi
 ### `npm run prettier`
 
 Runs Prettier on all files across your entire project, excluding files listed in .prettierignore
-
-### `npm run prepare`
-
-Installs Git hooks using Husky. This is generally used to set up pre-commit or pre-push hooks that run scripts like linting or tests automatically before commits are pushed to ensure code quality.

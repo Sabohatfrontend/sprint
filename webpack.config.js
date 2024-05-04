@@ -1,7 +1,11 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+import { resolve, dirname } from 'path'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import { fileURLToPath } from 'url'
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
+const config = {
     entry: './src/index.tsx',
     mode: 'development',
     module: {
@@ -18,7 +22,7 @@ module.exports = {
     },
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: resolve(__dirname, 'dist'),
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -26,3 +30,5 @@ module.exports = {
         }),
     ],
 }
+
+export default config
