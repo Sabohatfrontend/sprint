@@ -49,6 +49,7 @@ The fourth sprint will focus on improving the Detailed Product page, building th
 - **Basket Page:** Allows users to view and manage the products in their basket. [More details...]()
 - **About Us Page:** Gives a brief introduction to the development team. [More details...]()
 
+
 # Getting Started with Create React App
 
 ## Available Scripts
