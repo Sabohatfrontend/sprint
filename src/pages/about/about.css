@@ -79,6 +79,10 @@
   text-decoration: none;
 }
 
+.github-icon {
+  color: #777;
+}
+
 .github-link:hover {
   text-decoration: underline;
 }

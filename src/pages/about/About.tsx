@@ -4,6 +4,8 @@ import about_SabohatS from '../../assets/images/about_SabohatS.jpeg';
 import about_InaFK from '../../assets/images/about_InaFK.jpg';
 import rsschool from '../../assets/images/logo-rsschool3.png';
 import './about.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const teamMembers = [
   {
@@ -41,13 +43,15 @@ function About(): React.JSX.Element {
               <h3>{member.name}</h3>
               <p className="role">{member.role}</p>
               <p className="bio">{member.bio}</p>
+
               <a
                 href={member.github}
                 className="github-link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                GitHub Profile
+                <FontAwesomeIcon icon={faGithub} className="github-icon" />{' '}
+                GitHub Profile{' '}
               </a>
             </div>
           </div>
