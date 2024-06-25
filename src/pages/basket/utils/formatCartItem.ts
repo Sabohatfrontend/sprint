@@ -1,5 +1,5 @@
 import { Cart, LineItem } from '@commercetools/platform-sdk';
-import { CartItem } from '../../../Interfaces/cartsInterface';
+import { CartItem } from '../../../Interfaces/CartItem';
 
 export const calculateDiscountedPrice = (item: LineItem): number => {
   const basePrice = item.price.value.centAmount / 100;

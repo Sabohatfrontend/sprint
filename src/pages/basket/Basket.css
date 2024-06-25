@@ -96,6 +96,8 @@
 
 .num-btn {
   cursor: pointer;
+  border: none;
+  color: var(--brand-color);
 }
 
 .cart-item-details p {

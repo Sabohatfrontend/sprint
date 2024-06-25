@@ -4,7 +4,7 @@ import './basket.css';
 import { UserContext } from '../../context/userContext';
 import CircularProgress from '@mui/material/CircularProgress';
 import { clearBasket } from '../../../sdk/basketApi';
-import { CartItem } from '../../Interfaces/cartsInterface';
+import { CartItem } from '../../Interfaces/CartItem';
 
 function ClearBasketButton(props: {
   setCartItems: React.Dispatch<React.SetStateAction<CartItem[]>>;

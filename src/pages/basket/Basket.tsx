@@ -13,7 +13,7 @@ import {
 import { setFormat } from './utils/formatCartItem';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { CartItem } from '../../Interfaces/cartsInterface';
+import { CartItem } from '../../Interfaces/CartItem';
 import { UserContext } from '../../context/userContext';
 import CircularProgress from '@mui/material/CircularProgress';
 import ClearBasketButton from '../../components/basket/ClearCartButton';
@@ -151,9 +151,7 @@ const BasketPage: React.FC = () => {
         setPromoCodeApplied(true);
         setPromoCodeError(null);
       } else {
-        setPromoCodeError(
-          'Not valid promo code (For reviewers: please enter BOGO)'
-        );
+        setPromoCodeError('Not valid promo code (please enter BOGO)');
       }
     } catch (err) {
       console.error('Error applying promo code:', err);
@@ -200,7 +198,7 @@ const BasketPage: React.FC = () => {
           <div key={item.id} className="cart-item">
             <img
               src={item.imageUrl}
-              alt={item.name}
+              alt={item?.name}
               className="cart-item-image"
             />
             <div className="cart-item-details">
@@ -210,7 +208,7 @@ const BasketPage: React.FC = () => {
               >
                 Remove from Cart
               </button>
-              <h3 className="item-heading">{item.name}</h3>
+              <h3 className="item-heading">{item?.name}</h3>
               <p>Price: ${item.price.toFixed(2)}</p>
               <div className="quantity-control num-wrap">
                 <button

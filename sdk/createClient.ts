@@ -10,6 +10,7 @@ import {
 } from '@commercetools/sdk-client-v2';
 
 import { createApiBuilderFromCtpClient } from '@commercetools/platform-sdk';
+
 import {
   MyTokenCache,
   getRefreshToken,
@@ -122,42 +123,44 @@ export const clientMaker = () => {
     fetch,
   };
 
-  if (isExist()) {
-    const authorization: string = `Bearer ${getToken()}`;
-    const existTokenOptions: ExistingTokenMiddlewareOptions = {
-      force: true,
-    };
-    client = new ClientBuilder()
-      .withProjectKey(projectKey)
-      .withRefreshTokenFlow(refreshOptionLogin)
-      .withExistingTokenFlow(authorization, existTokenOptions)
-      .withHttpMiddleware(httpMiddlewareOptions)
-      .withLoggerMiddleware()
-      .build();
-  }
-
-  if (isExistAnonymToken()) {
-    const authorization: string = `Bearer ${getToken()}`;
-    const existTokenOptions: ExistingTokenMiddlewareOptions = {
-      force: true,
-    };
-    client = new ClientBuilder()
-      .withProjectKey(projectKey)
-      .withRefreshTokenFlow(refreshOption)
-      .withExistingTokenFlow(authorization, existTokenOptions)
-      .withHttpMiddleware(httpMiddlewareOptions)
-      .withLoggerMiddleware()
-      .build();
-  }
-
-  if (!isExistAnonymToken() && !isExist()) {
-    client = new ClientBuilder()
-      .withProjectKey(projectKey)
-      .withClientCredentialsFlow(authMiddlewareOptions)
-      .withAnonymousSessionFlow(withAnonymousSessionFlowOptions)
-      .withHttpMiddleware(httpMiddlewareOptions)
-      .withLoggerMiddleware()
-      .build();
+  try {
+    if (isExist()) {
+      const authorization: string = `Bearer ${getToken()}`;
+      const existTokenOptions: ExistingTokenMiddlewareOptions = {
+        force: true,
+      };
+      client = new ClientBuilder()
+        .withProjectKey(projectKey)
+        .withRefreshTokenFlow(refreshOptionLogin)
+        .withExistingTokenFlow(authorization, existTokenOptions)
+        .withHttpMiddleware(httpMiddlewareOptions)
+        .withLoggerMiddleware()
+        .build();
+    } else if (isExistAnonymToken()) {
+      const authorization: string = `Bearer ${getToken()}`;
+      const existTokenOptions: ExistingTokenMiddlewareOptions = {
+        force: true,
+      };
+      client = new ClientBuilder()
+        .withProjectKey(projectKey)
+        .withRefreshTokenFlow(refreshOption)
+        .withExistingTokenFlow(authorization, existTokenOptions)
+        .withHttpMiddleware(httpMiddlewareOptions)
+        .withLoggerMiddleware()
+        .build();
+    } else {
+      client = new ClientBuilder()
+        .withProjectKey(projectKey)
+        .withClientCredentialsFlow(authMiddlewareOptions)
+        .withAnonymousSessionFlow(withAnonymousSessionFlowOptions)
+        .withHttpMiddleware(httpMiddlewareOptions)
+        .withLoggerMiddleware()
+        .build();
+    }
+  } catch (error) {
+    console.error('Error creating client:', error);
+    // Handle error gracefully, possibly prompt user to retry login
+    throw error; // Rethrow error or handle as appropriate for your application
   }
 
   const apiRoot = createApiBuilderFromCtpClient(client!).withProjectKey({
