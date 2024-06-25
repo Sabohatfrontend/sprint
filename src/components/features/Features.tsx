@@ -8,7 +8,7 @@ function Features(): React.JSX.Element {
     <section className="features">
       <p className="content-text promo-text">
         <span className="only-today">Only today!</span> Apply promo code:{' '}
-        <span className="promo-code">&quot;MOGO&quot;</span> and get special
+        <span className="promo-code">&quot;BOGO&quot;</span> and get special
         discounts!
       </p>
       <div className="content">
