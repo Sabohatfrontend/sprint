@@ -1,7 +1,7 @@
 .features {
-  padding: 100px 50px;
+  padding: 50px 50px;
   background-image: url('../../assets/images/feature-bg.jpg');
-  background-size: auto;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -69,6 +69,7 @@
   0% {
     box-shadow: 0 0 7px var(--accent-color);
   }
+
   100% {
     box-shadow: 0 0 10px var(--accent-color);
   }
@@ -113,6 +114,7 @@
     width: 100%;
     margin: auto;
   }
+
   .only-today {
     font-size: 1.5rem;
   }
