@@ -1,7 +1,7 @@
 .features {
-  padding: 100px 50px;
+  padding: 50px 50px;
   background-image: url('../../assets/images/feature-bg.jpg');
-  background-size: auto;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -42,6 +42,39 @@
   letter-spacing: 0;
 }
 
+.promo-text {
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
+
+.promo-code {
+  font-weight: bold;
+}
+
+.only-today {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  background-color: var(--content-bg);
+  padding: 8px 0;
+  border-radius: 4px;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 7px var(--accent-color);
+  }
+
+  100% {
+    box-shadow: 0 0 10px var(--accent-color);
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .features {
     padding: 50px;
@@ -75,5 +108,14 @@
   .content-text__bold {
     font-size: 34px;
     line-height: 40px;
+  }
+
+  .promo-text {
+    width: 100%;
+    margin: auto;
+  }
+
+  .only-today {
+    font-size: 1.5rem;
   }
 }

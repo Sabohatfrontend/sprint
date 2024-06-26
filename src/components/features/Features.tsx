@@ -6,9 +6,15 @@ import { routes } from '../../modules/routes';
 function Features(): React.JSX.Element {
   return (
     <section className="features">
+      <p className="content-text promo-text">
+        <span className="only-today">Only today!</span> Apply promo code:{' '}
+        <span className="promo-code">&quot;BOGO&quot;</span> and get special
+        discounts!
+      </p>
       <div className="content">
         <h2 className="content-header">New Arrival</h2>
         <p className="content-text__bold">Discover Our New Collection </p>
+
         <p className="section-text content-text">
           Buying new furniture allows you to create your own unique style and
           ambiance in your home, whether you prefer a modern, minimalist,

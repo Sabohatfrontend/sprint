@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import React, { useContext, useState } from 'react';
 import './header.css';
-import { getMyToken, isExist } from '../../../sdk/myToken';
+import { isExist } from '../../../sdk/myToken';
 import { UserContext } from '../../context/userContext';
 import { clientMaker } from '../../../sdk/createClient';
 import { routes } from '../../modules/routes';
@@ -17,8 +17,8 @@ function ProfilePanel(props: {
     setIsLogin(false);
     localStorage.removeItem('myCache');
     const newApiRoot = clientMaker();
+    console.log('NewApiRoot:', newApiRoot);
     setApiRoot(newApiRoot);
-    getMyToken();
     navigate(routes.home);
   };
 
