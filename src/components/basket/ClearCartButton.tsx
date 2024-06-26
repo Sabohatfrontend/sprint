@@ -37,17 +37,27 @@ function ClearBasketButton(props: {
     }
   }, [errorMessage]);
 
+  if (loading) {
+    return (
+      <div className="clear-basket">
+        <CircularProgress className="progress" disableShrink />
+      </div>
+    )
+  }
+
+  if (errorMessage) {
+    return (
+      <div className="clear-basket">
+        <p className="basket-error">There are some error</p>
+      </div>
+    )
+  }
+
   return (
     <div className="clear-basket">
-      {loading ? (
-        <CircularProgress className="progress" disableShrink />
-      ) : errorMessage ? (
-        <p className="basket-error">There are some error</p>
-      ) : (
-        <button className="button" onClick={handleClearBasket}>
-          Clear Basket
-        </button>
-      )}
+      <button className="button" onClick={handleClearBasket}>
+        Clear Basket
+      </button>
     </div>
   );
 }

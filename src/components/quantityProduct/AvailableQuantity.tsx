@@ -5,11 +5,14 @@ import './availableQuantity.css';
 function AvailableQuantity(props: {
   product: ProductProjection;
 }): React.JSX.Element {
+  const availability = props.product.masterVariant.availability;
+  let availableQuantity = availability ? availability.availableQuantity : 0;
+
   return (
     <>
-      {props.product.masterVariant.availability?.availableQuantity ? (
+      {availableQuantity ? (
         <span className="number-pcs">
-          {props.product.masterVariant.availability?.availableQuantity} pcs
+          {availableQuantity} pcs
         </span>
       ) : (
         <span className="number-pcs not-available">{'Not available'}</span>
